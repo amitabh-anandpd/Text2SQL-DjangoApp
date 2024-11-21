@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Homepage</title>
+
+{% endblock %}
+
+{% block ofbody %}
+<form method="post" class="middle_align">
+    {% csrf_token %}
+<h1x style="position: absolute; top: calc(50% - 100px); width: 400px; left: calc(50% - 200px);" class="middle_align">Enter code to view</h1x>
+<input id="code" name="code" style="position: absolute; top: 50%; width: 30%; height: 30px; left: 35%;" class="middle_align" required/>
+<button class="middle_align" style="position: absolute; top: calc(50% + 50px); width: auto; height: 30px; left: calc(50% - 30px);" type="submit">Submit</button>
+</form>
+<footer style="position: fixed; bottom: 0;">
+    <div class="footer-container">
+        <div class="footer-element">
+            <p>AMITABH ANAND</p>
+            <p>CB.AI.U4AID23002</p>
+        </div>
+        <div class="footer-element">
+            <p>HARIKRISHNA</p>
+            <p>CB.AI.U4AID23011</p>
+        </div>
+        <div class="footer-element middle_align">
+            <p>&copy; 2024 AMRITA. All rights reserved.</p>
+            <p>Coimbatore, Tamil Nadu</p>
+        </div>
+        <div class="footer-element">
+            <p>DEEPAK KUMAR</p>
+            <p>CB.AI.U4AID23012</p>
+        </div>
+        <div class="footer-element">
+            <p>PRASANNA JAGANNATH</p>
+            <p>CB.AI.U4AID23065</p>
+        </div>
+    </div>
+</footer>
+{% endblock %}

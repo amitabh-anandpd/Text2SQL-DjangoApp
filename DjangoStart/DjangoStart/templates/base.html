@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body style="min-height: 1200x;">
+        <script>
+            {% block script %}
+            {% endblock %}
+        </script>
+        <section class="headtop middle_align">
+            <span class="marquee2 middle_align">
+                <p>Made by A11</p>
+            </span>
+        </section>
+        <header class="btnH">
+            {% for message in messages %}
+                <div class="alert middle_align">
+                    <div class="closebtn" onclick="this.parentElement.style.display='none';">&times;</div>
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <navigation>
+                <a href="#" target="blank" style="position: absolute; left: 10%;">View1</a>
+                <a href="#" target="blank" style="position: absolute; left: 30%;">View2</a>
+                <a href="{% url 'home' %}"><img src="{% static 'amma.jpg' %}" style="position: absolute; left: 45%; width: 150px; height: 80px; top: 0;"/></a>
+                <a href="#" target="blank" style="position: absolute; left: 60%;">View3</a>
+                <a href="#" target="blank" style="position: absolute; left: 80%;">View4</a>
+            </navigation>
+        </header>
+        {% block ofbody %}
+        {% endblock %}
+    </body>
+</html>
