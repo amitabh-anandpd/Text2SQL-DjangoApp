@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block ofbody %}
+    <h1x style="width: 400px; position: absolute; left: calc((50%) - 200px); top: 250px;">Showing Results:</h1x>
+    <form method="post" class="middle_align">
+        {% csrf_token %}
+        <input class="middle_align" placeholder="{{ sqlQuery }}" style="font-size: 30px; min-width: 600px; height: 50px; background-color: white;
+                    color: black; top: 320px; position: absolute; left: calc((50%) - 300px); border: solid black;
+                    border-radius: 20px; text-align: center; line-height: 50px;"/>
+    </form>
+
+    <h1x class="middle_align" style="margin-top: 400px;">SQL Table Data</h1x>
+
+    {% if error %}
+        <div class="alert middle_align"
+             style="background-color: #f8d7da; color: #721c24; padding: 10px; min-width: 100px;
+                    border-radius: 5px; margin: 20px 0; position: absolute; width: auto; top: 90px;">
+            <span class="closebtn" style="position: absolute; right: 10px; top: 5px; cursor: pointer;"
+                  onclick="this.parentElement.style.display='none';">&times;</span>
+            {{ error }}
+        </div>
+    {% else %}
+        <table border="1" style="border-collapse: collapse; width: 80%; margin: auto; margin-bottom: 160px; text-align: center;">
+            <thead>
+                <tr style="background-color: #f2f2f2;">
+                    {% for col in columns %}
+                        <th style="padding: 10px; border: 1px solid black;">{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in table_data %}
+                    <tr>
+                        {% for cell in row %}
+                            <td style="padding: 10px; border: 1px solid black;">{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

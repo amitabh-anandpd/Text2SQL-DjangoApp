@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block ofbody %}
+    <h1 style="text-align: center; margin-top: 150px;">Available Databases</h1>
+
+    <div class="middle_align" style="text-align: center; margin-top: 40px;">
+        <ul style="list-style-type: none; display: flex; flex-direction: column;">
+            {% if databases %}
+                {% for db in databases %}
+                    <li style="margin: 10px 0; display: flex; flex-direction: column;">
+                        <a href="{% url 'main' %}?db={{ db }}"
+                           style="font-size: 24px; text-decoration: none; color: blue;">
+                            {{ db }}
+                        </a>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <p>No databases found in the directory.</p>
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %}

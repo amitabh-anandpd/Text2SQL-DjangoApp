@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body style="min-height: 1200x;">
+        <section class="headtop middle_align">
+            <span class="marquee2 middle_align">
+                <p>Made by A11</p>
+            </span>
+        </section>
+        <header class="btnH">
+            {% for message in messages %}
+                <div class="alert middle_align">
+                    <div class="closebtn" onclick="this.parentElement.style.display='none';">&times;</div>
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <navigation>
+                <a href="{% url 'pdf1' %}" target="blank" style="position: absolute; left: 10%;">Paper1</a>
+                <a href="{% url 'pdf2' %}" target="blank" style="position: absolute; left: 30%;">Paper2</a>
+                <a href="{% url 'main' %}"><img src="{% static 'amma.jpg' %}" style="position: absolute; left: 45%; width: 150px; height: 80px; top: 0;"/></a>
+                <a href="https://www.kaggle.com/datasets/shahrukhkhan/wikisql" target="blank" style="position: absolute; left: 60%;">WikiSQL</a>
+                <a href="https://zenodo.org/records/5205322" target="blank" style="position: absolute; left: 80%;">Spider-Realistic</a>
+            </navigation>
+        </header>
+        <script>
+            {% block script %}
+            {% endblock %}
+        </script>
+        {% block ofbody %}
+        {% endblock %}
+    </body>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-element">
+                <p>AMITABH ANAND</p>
+                <p>CB.AI.U4AID23002</p>
+            </div>
+            <div class="footer-element">
+                <p>HARIKRISHNA</p>
+                <p>CB.AI.U4AID23011</p>
+            </div>
+            <div class="footer-element middle_align">
+                <p>&copy; 2024 AMRITA. All rights reserved.</p>
+                <p>Coimbatore, Tamil Nadu</p>
+            </div>
+            <div class="footer-element">
+                <p>DEEPAK KUMAR</p>
+                <p>CB.AI.U4AID23012</p>
+            </div>
+            <div class="footer-element">
+                <p>PRASANNA JAGANNATH</p>
+                <p>CB.AI.U4AID23065</p>
+            </div>
+        </div>
+    </footer>
+</html>

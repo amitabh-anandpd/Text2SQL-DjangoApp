@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block ofbody %}
+    <h1x style="position: absolute; left: 48%; top: 40%;">Search</h1x>
+    <form method="post" class="middle_align">
+        {% csrf_token %}
+        <input id="nlInput" name="nlInput" class="text" style="font-size: 30px; position: absolute; top: 50%; left: 35%; width: 500px; height: 40px; border-radius: 10px;" required/>
+        <button type="submit" style="position: absolute; top: 57%; left: 47%; border-radius: 10px;">Submit</button>
+    </form>
+    <a href="upload/"><button style="position: absolute; top: 57%; left: 53%; border-radius: 10px;">Upload</button></a>
+    <a href="databases/"><button style="position: absolute; top: 64%; left: 49%; border-radius: 10px;">Databases</button></a>
+{% endblock %}
